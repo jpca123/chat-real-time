@@ -1,0 +1,93 @@
+
+
+
+.chat-contenedor{
+	max-width: 500px;
+	width: 60vw;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid 1px #ddd;
+	border-radius: 10px;
+	transition: all .3s;
+	overflow: hidden;
+}
+
+.chat{
+	display: block;
+	background-color: #9fefde;
+	max-height: 60vh;
+	min-height: 200px;
+	overflow-y: auto;
+	padding: 10px 0;
+	position: relative;
+}
+
+.msg-chat{
+	box-sizing: border-box;
+	display: block;
+	margin-bottom: 10px;
+	width: fit-content;
+	min-width: 3em;
+	width: 45%;
+	height: fit-content;
+	left: calc(55% - 10px);
+	padding: 5px;
+	overflow-wrap: break-word;
+}
+
+.yo{
+	position: relative;
+	border-radius: 10px 10px 0 10px;
+	background-color: #5e6;
+	text-align: right;
+	/*margin-left: calc(55% - 20px);*/
+}
+.el{
+	border-radius: 10px 10px 10px 0;
+	background-color: #fff;
+	margin-left: 10px;
+}
+
+
+.escribir{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background-color: #ccc;
+	padding: 10px 0;
+
+}
+.escribir-contenedor{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 95%;
+	background-color: #eff0ef;
+	margin: 0 auto;
+	border: solid 1px #ccc;
+	border-radius: 30vw;
+}
+
+
+.escribir-input{
+	display: block;
+	border: none;
+	padding: .5em 2em;
+	outline: none;
+	max-width: 70%;
+	width: calc(80% - 2em);
+	background-color: transparent;
+
+}
+.escribir-btn{
+	display: block;
+	width: 2em;
+	height: 2em;
+	font-size: 1.3em;
+	text-align: center;
+	background-color: transparent;
+	border: none;
+	color: #3a6;
+}
