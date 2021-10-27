@@ -25,10 +25,12 @@ function enviarMensaje(e){
 	})
 	localStorage.setItem("mensajes", JSON.stringify(listaMensajes));
 	listaMensajes = JSON.parse(localStorage.getItem("mensajes"));
-	renderizarChat(e)
+	renderizarChat(e);
 }
 
 function renderizarChat(e){
+	let contenedor = document.createElement('article');
+	contenedor.classList.add('msg-container');
 	let nuevoChat = document.createElement('p');
 	nuevoChat.classList.add("msg-chat");
 	if(e.type === "submit"){
@@ -44,10 +46,13 @@ function renderizarChat(e){
 		}
 
 	}	
-	chat.appendChild(nuevoChat);
+	contenedor.appendChild(nuevoChat);
+	chat.appendChild(contenedor);
 	mensaje.value = "";
+	console.log(chat.offsetHeigth)
 
 }
+
 
 
 window.addEventListener("storage", renderizarChat)
