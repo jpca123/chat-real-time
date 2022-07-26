@@ -25,29 +25,37 @@ function enviarMensaje(e){
 	})
 	localStorage.setItem("mensajes", JSON.stringify(listaMensajes));
 	listaMensajes = JSON.parse(localStorage.getItem("mensajes"));
-	renderizarChat(e)
+	renderizarChat(e);
 }
 
 function renderizarChat(e){
+	let contenedor = document.createElement('article');
+	contenedor.classList.add('msg-container');
 	let nuevoChat = document.createElement('p');
 	nuevoChat.classList.add("msg-chat");
 	if(e.type === "submit"){
 		nuevoChat.innerHTML = mensaje.value;
-		nuevoChat.classList.add('yo');
+		nuevoChat.classList.add('el');
 	}else{
 		if(e.key === "mensajes"){
 			let obj = JSON.parse(e.newValue);
 			nuevoChat.innerHTML = obj[obj.length - 1].message;
-			nuevoChat.classList.add('el');
+			nuevoChat.classList.add('yo');
 		}else{
 			return mensaje.value = "";
 		}
 
 	}	
-	chat.appendChild(nuevoChat);
+	contenedor.appendChild(nuevoChat);
+	chat.appendChild(contenedor);
 	mensaje.value = "";
+	console.log(chat.scorllTop)
+	console.log(chat.scrollHeight)
+	console.log(chat.clientHeight)
+	chat.scrollTop = chat.scrollHeight + chat.clientHeight;
 
 }
+
 
 
 window.addEventListener("storage", renderizarChat)

@@ -1,93 +1,135 @@
 
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
+body{
+	background-color: #020409;
+	color: #eee;
+}
 
 .chat-contenedor{
-	max-width: 500px;
-	width: 60vw;
-	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: min(600px, 90vw);
+	height: 80vh;
 	margin-left: auto;
 	margin-right: auto;
-	border: solid 1px #ddd;
-	border-radius: 10px;
+	border: solid 1px #555;
+	border-radius: 5px;
 	transition: all .3s;
 	overflow: hidden;
 }
 
 .chat{
 	display: block;
-	background-color: #9fefde;
-	max-height: 60vh;
-	min-height: 200px;
+	width: 100%;
+	background-color: #146;
 	overflow-y: auto;
-	padding: 10px 0;
+	padding: .5em 1em;
 	position: relative;
+	color: #eee;
+	flex-grow: 1;
+}
+
+.msg-container{
+	display: block;
+	width: 100%;
 }
 
 .msg-chat{
-	box-sizing: border-box;
+	position: relative;
 	display: block;
-	margin-bottom: 10px;
 	width: fit-content;
-	min-width: 3em;
-	width: 45%;
 	height: fit-content;
-	left: calc(55% - 10px);
-	padding: 5px;
-	overflow-wrap: break-word;
+	max-width: 60%;
+	min-width: 1em;
+	min-height: 1.5em;
+	padding: .3em 1em;
+	margin-top: .5em;
+	overflow-x: hidden; 
+	word-break: break-all;
+	line-height: 1.5;
+	border-radius: 0 .5em .5em .5em;
+	color: #000;
 }
 
 .yo{
-	position: relative;
-	border-radius: 10px 10px 0 10px;
-	background-color: #5e6;
-	text-align: right;
-	/*margin-left: calc(55% - 20px);*/
+	background-color: #eee;
+	/* right: 0; */
+	justify-self: right;
 }
 .el{
-	border-radius: 10px 10px 10px 0;
-	background-color: #fff;
-	margin-left: 10px;
+	margin-left: auto;
+	border-radius: .5em 0 .5em .5em;
+	background-color: #8ea;
+	text-align: right;
 }
 
 
 .escribir{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	display: block;
 	width: 100%;
-	background-color: #ccc;
-	padding: 10px 0;
+	background-color: #4a8;
+	padding: .5em;
 
 }
 .escribir-contenedor{
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
-	width: 95%;
-	background-color: #eff0ef;
+	justify-content: space-between;
+	width: 100%;
+	background-color: #032;
 	margin: 0 auto;
-	border: solid 1px #ccc;
-	border-radius: 30vw;
+	border-radius: 100vw;
+	color: #eee;
 }
 
 
 .escribir-input{
 	display: block;
 	border: none;
-	padding: .5em 2em;
+	font-size: 1em;
+	padding: .8em 2em;
 	outline: none;
-	max-width: 70%;
-	width: calc(80% - 2em);
+	width: calc(100% - 3em);
 	background-color: transparent;
+	color: inherit;
 
 }
+.escribir-input::placeholder{
+	color:#bbb;
+}
 .escribir-btn{
+	position: relative;
 	display: block;
-	width: 2em;
-	height: 2em;
-	font-size: 1.3em;
+	width: 1em;
+	height: 1em;
+	margin-right: 1em;
+	font-size: 1.7em;
 	text-align: center;
-	background-color: transparent;
 	border: none;
-	color: #3a6;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+}
+.escribir-btn::before, .escribir-btn::after{
+	content: "";
+	position: absolute;
+	left: 25%;
+	display: block;
+	width: .5em;
+	height: .2em;
+	background-color: #4a8;
+	border-radius: 100vh;
+}
+.escribir-btn::before{
+	transform: translateY(50%) rotate(-45deg) ;
+}
+.escribir-btn::after{
+	transform: translateY(-75%) rotate(45deg);
 }
