@@ -49,10 +49,14 @@ function renderizarChat(e){
 	contenedor.appendChild(nuevoChat);
 	chat.appendChild(contenedor);
 	mensaje.value = "";
+<<<<<<< HEAD
 	console.log(chat.scorllTop)
 	console.log(chat.scrollHeight)
 	console.log(chat.clientHeight)
 	chat.scrollTop = chat.scrollHeight + chat.clientHeight;
+=======
+	console.log(chat.offsetHeigth)
+>>>>>>> acab1562b4fad14cb8b43a8aad717aea02e4a603
 
 }
 
